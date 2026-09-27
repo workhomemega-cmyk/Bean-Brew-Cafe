@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Bean & Brew Café | Premium Coffee in Gangtok, Sikkim</title>
+    <meta name="title" content="Bean & Brew Café | Premium Coffee in Gangtok, Sikkim">
+    <meta name="description" content="Experience the finest artisanal coffee, organic Himalayan teas, and fresh pastries at Bean & Brew Café, Gangtok's premier destination for coffee lovers.">
+    <meta name="keywords" content="Cafe in Gangtok, Coffee shop Sikkim, Bean and Brew Cafe, Best coffee Gangtok, Himalayan tea, Pastries Gangtok">
+    <meta name="author" content="Bean & Brew Café">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beanandbrewgangtok.com/">
+    <meta property="og:title" content="Bean & Brew Café | Premium Coffee in Gangtok">
+    <meta property="og:description" content="Experience the finest artisanal coffee, organic Himalayan teas, and fresh pastries at Bean & Brew Café, Gangtok.">
+    <!-- Using a premium unsplash image for social sharing -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Structured Data for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Bean & Brew Café",
+      "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200",
+      "@id": "",
+      "url": "https://beanandbrewgangtok.com/",
+      "telephone": "+918101314114",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "MG Marg Area",
+        "addressLocality": "Gangtok",
+        "addressRegion": "Sikkim",
+        "postalCode": "737101",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.3314,
+        "longitude": 88.6138
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "22:00"
+      },
+      "sameAs": [
+        "https://wa.me/918101314114"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for clean, modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for modern lightweight icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#08080a', /* Deepest background */
+                            800: '#121217', /* Slightly lighter for sections */
+                            nav: '#050507', /* Solid, bold dark for navigation */
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'glow': 'glow 8s ease-in-out infinite alternate',
+                        'slide-down': 'slideDown 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        glow: {
+                            '0%': { opacity: 0.3, transform: 'scale(1)' },
+                            '100%': { opacity: 0.6, transform: 'scale(1.1)' },
+                        },
+                        slideDown: {
+                            '0%': { opacity: 0, transform: 'translateY(-10px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ========================================== -->
+    <!-- CSS STYLES SECTION                         -->
+    <!-- ========================================== -->
+    <style>
+        /* Base Styles & Utility Classes */
+        body {
+            background-color: #08080a;
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Glassmorphism for cards (creates depth against the solid background) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                        background 0.4s ease, 
+                        border-color 0.4s ease,
+                        box-shadow 0.4s ease;
+        }
+        
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Gradient text utility */
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom Webkit Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050507;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a30;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b; /* Amber hover on scrollbar */
+        }
+        
+        /* Smooth Scroll Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Delays for staggered animations */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Mobile Menu Transitions */
+        .mobile-menu-base {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top;
+            display: flex !important; /* Overrides Tailwind hidden state for animation */
+        }
+        .menu-closed {
+            opacity: 0;
+            visibility: hidden;
+            transform: scaleY(0.95) translateY(-10px);
+            pointer-events: none;
+        }
+        .menu-open {
+            opacity: 1;
+            visibility: visible;
+            transform: scaleY(1) translateY(0);
+            pointer-events: auto;
+        }
+        
+        /* Navigation Solid Background Override */
+        /* Ensures absolute opacity for the header and mobile menu */
+        .solid-nav-bg {
+            background-color: #050507 !important;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-white relative">
+
+    <!-- Ambient Glow Effects (Kept subtle for premium feel, avoiding clutter) -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[50%] -translate-x-1/2 w-[800px] h-[800px] bg-amber-600/10 rounded-full blur-[120px] animate-glow mix-blend-screen"></div>
+        <div class="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[100px] mix-blend-screen"></div>
+        <!-- Minimal subtle particles -->
+        <div class="absolute top-[20%] left-[15%] w-1 h-1 bg-white/30 rounded-full blur-[1px]"></div>
+        <div class="absolute top-[60%] right-[20%] w-1.5 h-1.5 bg-amber-400/30 rounded-full blur-[1px]"></div>
+    </div>
+
+    <!-- Navigation - Solid Bold Background applied here -->
+    <header id="main-header" class="fixed w-full top-0 z-50 solid-nav-bg border-b border-white/5 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group" aria-label="Home">
+                <i class="ph ph-coffee text-2xl text-amber-500 group-hover:rotate-12 transition-transform duration-300"></i>
+                <span class="font-bold tracking-wide text-xl text-white">Bean & Brew</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <!-- Navigation links with hover animations -->
+                <a href="#about" class="text-gray-300 hover:text-amber-400 hover:-translate-y-0.5 transition-all duration-300">About</a>
+                <a href="#menu" class="text-gray-300 hover:text-amber-400 hover:-translate-y-0.5 transition-all duration-300">Menu</a>
+                <a href="#services" class="text-gray-300 hover:text-amber-400 hover:-translate-y-0.5 transition-all duration-300">Services</a>
+                <a href="#contact" class="text-gray-300 hover:text-amber-400 hover:-translate-y-0.5 transition-all duration-300">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden md:flex items-center gap-6">
+                <!-- Click to call / WhatsApp -->
+                <a href="https://wa.me/918101314114" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-300 hover:text-green-400 transition-colors flex items-center gap-2 group">
+                    <i class="ph ph-whatsapp-logo text-lg group-hover:scale-110 transition-transform"></i>
+                    WhatsApp
+                </a>
+                <a href="#contact" class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-amber-400 hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:-translate-y-0.5">
+                    Visit Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2 transition-transform active:scale-95 focus:outline-none" aria-label="Toggle Menu">
+                <i class="ph ph-list text-3xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu - Solid Bold Background applied here -->
+        <div id="mobile-menu" class="mobile-menu-base menu-closed md:hidden solid-nav-bg absolute top-full left-0 w-full border-b border-white/10 py-6 px-6 flex-col gap-4 shadow-2xl z-40 h-[calc(100vh-60px)] overflow-y-auto">
+            
+            <!-- Mobile Links with staggered entrance (handled via JS) -->
+            <a href="#about" class="mobile-link text-white hover:text-amber-400 text-2xl font-bold py-4 border-b border-white/5 transition-colors">About</a>
+            <a href="#menu" class="mobile-link text-white hover:text-amber-400 text-2xl font-bold py-4 border-b border-white/5 transition-colors">Menu</a>
+            <a href="#services" class="mobile-link text-white hover:text-amber-400 text-2xl font-bold py-4 border-b border-white/5 transition-colors">Services</a>
+            <a href="#contact" class="mobile-link text-white hover:text-amber-400 text-2xl font-bold py-4 transition-colors">Contact</a>
+            
+            <div class="mt-8 flex flex-col gap-4">
+                <a href="https://wa.me/918101314114" class="text-white font-semibold py-4 flex items-center justify-center gap-3 bg-green-500/10 border border-green-500/20 rounded-xl px-4 hover:bg-green-500 hover:text-black transition-all duration-300">
+                    <i class="ph ph-whatsapp-logo text-2xl"></i> WhatsApp Us
+                </a>
+                <a href="tel:+918101314114" class="text-gray-200 font-semibold py-4 flex items-center justify-center gap-3 bg-white/5 rounded-xl px-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <i class="ph ph-phone text-2xl"></i> Call +91 8101314114
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[100svh] flex items-center justify-center pt-24 overflow-hidden px-6">
+            <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+                
+                <div class="reveal-up px-5 py-2 rounded-full glass-panel text-xs font-bold text-amber-400 mb-8 inline-flex items-center gap-2 uppercase tracking-[0.2em] shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.8)]"></span>
+                    Gangtok's Premium Cafe
+                </div>
+
+                <h1 class="reveal-up delay-100 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-gradient">
+                    Elevate Your <br class="hidden md:block" /> Coffee Experience
+                </h1>
+                
+                <p class="reveal-up delay-200 text-lg md:text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed">
+                    Unlock the true taste of the Himalayas in a fully immersive environment, powered by fresh organic beans and expert baristas.
+                </p>
+
+                <div class="reveal-up delay-300 flex flex-col sm:flex-row items-center gap-5 w-full justify-center">
+                    <a href="#menu" class="w-full sm:w-auto bg-white text-black px-10 py-4 rounded-full text-base font-bold hover:bg-amber-400 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] text-center group">
+                        Explore Menu <i class="ph ph-arrow-right inline-block ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto glass-panel text-white px-10 py-4 rounded-full text-base font-bold hover:bg-white hover:text-black transition-all duration-300 text-center">
+                        Get Directions
+                    </a>
+                </div>
+            </div>
+
+            <!-- Floating Glass Cards (Inspired by the premium tech UI reference) -->
+            <div class="hidden lg:block absolute top-[30%] left-[5%] glass-panel p-5 rounded-2xl w-64 animate-float cursor-default">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider">Specialty</span>
+                    <div class="w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-amber-400 hover:text-black transition-colors">
+                        <i class="ph ph-arrow-up-right text-xs font-bold"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-1">Himalayan Blend</h3>
+                <p class="text-sm text-amber-400 font-medium">100% Organic Sourced</p>
+            </div>
+
+            <div class="hidden lg:block absolute top-[60%] right-[5%] glass-panel p-5 rounded-2xl w-60 animate-float-delayed cursor-default">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider">Experience</span>
+                    <div class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                        <i class="ph ph-star-fill text-xs"></i>
+                    </div>
+                </div>
+                <h3 class="text-4xl font-bold text-white mb-1">4.9<span class="text-lg text-gray-500 font-medium">/5</span></h3>
+                <div class="w-full bg-white/10 h-1.5 rounded-full mt-4 overflow-hidden">
+                    <div class="w-[98%] bg-amber-500 h-full rounded-full relative">
+                        <div class="absolute top-0 right-0 bottom-0 w-4 bg-white/30 blur-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Features Section -->
+        <section id="services" class="py-24 relative z-10 bg-dark-900 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal-up">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">Beyond the Brew</h2>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">Nestled in the heart of Gangtok, Bean & Brew is a sanctuary for coffee enthusiasts and those seeking a premium atmosphere.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="glass-panel p-10 rounded-3xl group reveal-up delay-100">
+                        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-amber-500 group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-500">
+                            <i class="ph ph-coffee-bean text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors">Artisanal Beans</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">Sourced from the finest high-altitude estates, our beans are roasted to perfection to ensure a rich, complex flavor profile in every cup.</p>
+                    </div>
+                    
+                    <!-- Feature 2: FIXED ICON (ph-cake) -->
+                    <div class="glass-panel p-10 rounded-3xl group reveal-up delay-200">
+                        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-amber-500 group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-500">
+                            <!-- Switched to ph-cake for guaranteed cross-browser visibility -->
+                            <i class="ph ph-cake text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors">Fresh Pastries</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">Baked fresh daily by our expert chefs. Pair your brew with our signature artisanal cakes, muffins, and decadent desserts.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="glass-panel p-10 rounded-3xl group reveal-up delay-300">
+                        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-amber-500 group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-500">
+                            <i class="ph ph-mountains text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors">Himalayan Ambiance</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">Experience a modern, cozy atmosphere designed for relaxation, work, or catching up with friends right here in the heart of Gangtok.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Menu Section -->
+        <section id="menu" class="py-24 relative z-10 bg-[#08080a]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">Curated Selection</h2>
+                        <p class="text-gray-400 text-lg max-w-xl leading-relaxed">A glimpse into our crafted offerings. We serve a wide variety of espresso-based drinks, pour-overs, and specialty teas.</p>
+                    </div>
+                    <a href="#contact" class="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white hover:text-amber-400 transition-colors group px-6 py-3 rounded-full border border-white/10 hover:border-amber-400/50">
+                        View Full Menu <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Image Area -->
+                    <div class="reveal-up delay-100 rounded-[2rem] overflow-hidden relative h-[500px] lg:h-auto border border-white/5 shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Barista pouring delicate latte art into a premium coffee cup" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050507] via-[#050507]/40 to-transparent"></div>
+                        <div class="absolute bottom-12 left-10 right-10">
+                            <span class="px-4 py-1.5 bg-amber-500 text-black text-xs font-bold rounded-full mb-5 inline-block uppercase tracking-widest shadow-lg">Signature</span>
+                            <h3 class="text-3xl font-bold text-white mb-3">Classic Latte Art</h3>
+                            <p class="text-gray-300 font-medium text-lg">Perfectly steamed organic milk layered over rich, dark roasted espresso.</p>
+                        </div>
+                    </div>
+
+                    <!-- Menu Items List -->
+                    <div class="flex flex-col gap-5 justify-center">
+                        <!-- Menu Item -->
+                        <div class="reveal-up delay-100 glass-panel p-6 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-white/5">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Himalayan Pour Over</h4>
+                                <p class="text-sm text-gray-400 font-medium">Single-origin beans, slow-brewed for unmatched clarity</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-300 shrink-0 ml-4">
+                                <i class="ph ph-arrow-right text-lg"></i>
+                            </div>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="reveal-up delay-200 glass-panel p-6 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-white/5">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Matcha Velvet Latte</h4>
+                                <p class="text-sm text-gray-400 font-medium">Ceremonial grade matcha, steamed organic milk</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-300 shrink-0 ml-4">
+                                <i class="ph ph-arrow-right text-lg"></i>
+                            </div>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="reveal-up delay-300 glass-panel p-6 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-white/5">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Artisanal Pastries</h4>
+                                <p class="text-sm text-gray-400 font-medium">Flaky, golden croissants and cakes baked fresh daily</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-300 shrink-0 ml-4">
+                                <i class="ph ph-arrow-right text-lg"></i>
+                            </div>
+                        </div>
+                        <!-- Menu Item -->
+                        <div class="reveal-up delay-400 glass-panel p-6 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-white/5">
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Cold Brew Reserve</h4>
+                                <p class="text-sm text-gray-400 font-medium">Steeped for 24 hours, served over premium craft ice</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-amber-500 group-hover:border-amber-500 group-hover:text-black transition-all duration-300 shrink-0 ml-4">
+                                <i class="ph ph-arrow-right text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Only CTA -->
+                <div class="mt-10 md:hidden flex justify-center reveal-up">
+                    <a href="#contact" class="inline-flex items-center justify-center w-full gap-2 text-sm font-bold text-white hover:text-black bg-white/5 hover:bg-amber-400 transition-all py-4 rounded-full border border-white/10 group">
+                        View Full Menu <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact" class="py-24 relative z-10 border-t border-white/5 bg-dark-800/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    
+                    <!-- Contact Info & Form -->
+                    <div class="reveal-up">
+                        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">Visit Bean & Brew</h2>
+                        <p class="text-gray-400 text-lg mb-12 leading-relaxed">Drop by for your daily cup, or reach out to us for bulk orders, reservations, and event catering in Gangtok.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
+                            <!-- Info Items: Interactive and responsive -->
+                            <a href="tel:+918101314114" class="glass-panel p-5 rounded-2xl flex items-center gap-4 group hover:border-white/30">
+                                <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 shrink-0">
+                                    <i class="ph ph-phone text-2xl text-white group-hover:text-black"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Call Us</p>
+                                    <p class="font-bold text-white group-hover:text-amber-400 transition-colors">+91 8101314114</p>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/918101314114" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 rounded-2xl flex items-center gap-4 group hover:border-[#25D366]/50">
+                                <div class="w-14 h-14 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center group-hover:bg-[#25D366] group-hover:text-black transition-all duration-300 shrink-0">
+                                    <i class="ph ph-whatsapp-logo text-2xl text-[#25D366] group-hover:text-black"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">WhatsApp</p>
+                                    <p class="font-bold text-white group-hover:text-[#25D366] transition-colors">+91 8101314114</p>
+                                </div>
+                            </a>
+                            
+                            <a href="mailto:workhomemega@gmail.com" class="glass-panel p-5 rounded-2xl flex items-center gap-4 group sm:col-span-2 hover:border-white/30">
+                                <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 shrink-0">
+                                    <i class="ph ph-envelope-simple text-2xl text-white group-hover:text-black"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Email Us</p>
+                                    <p class="font-bold text-white truncate group-hover:text-amber-400 transition-colors">workhomemega@gmail.com</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Interactive Downloadable Form Section -->
+                        <form id="contact-form" class="glass-panel p-8 rounded-3xl flex flex-col gap-5 reveal-up delay-100 shadow-2xl">
+                            <h3 class="text-2xl font-bold text-white mb-2">Send us a message</h3>
+                            <div id="form-message" class="hidden p-4 rounded-xl text-sm font-bold text-center mb-2 transition-all"></div>
+                            
+                            <div class="relative">
+                                <input type="text" id="name" placeholder="Your Name" required class="w-full bg-[#050507]/80 border border-white/10 rounded-xl px-5 py-4 text-base focus:outline-none focus:border-amber-500 focus:bg-[#050507] transition-all text-white placeholder-gray-500 peer">
+                                <label for="name" class="absolute text-xs text-gray-500 uppercase tracking-widest top-0 left-5 -translate-y-1/2 bg-[#08080a] px-1 hidden peer-focus:block peer-valid:block transition-all">Name</label>
+                            </div>
+                            
+                            <div class="relative">
+                                <input type="email" id="email" placeholder="Email Address" required class="w-full bg-[#050507]/80 border border-white/10 rounded-xl px-5 py-4 text-base focus:outline-none focus:border-amber-500 focus:bg-[#050507] transition-all text-white placeholder-gray-500 peer">
+                                <label for="email" class="absolute text-xs text-gray-500 uppercase tracking-widest top-0 left-5 -translate-y-1/2 bg-[#08080a] px-1 hidden peer-focus:block peer-valid:block transition-all">Email</label>
+                            </div>
+                            
+                            <div class="relative">
+                                <textarea id="message" placeholder="How can we help?" rows="4" required class="w-full bg-[#050507]/80 border border-white/10 rounded-xl px-5 py-4 text-base focus:outline-none focus:border-amber-500 focus:bg-[#050507] transition-all text-white placeholder-gray-500 resize-none peer"></textarea>
+                                <label for="message" class="absolute text-xs text-gray-500 uppercase tracking-widest top-0 left-5 -translate-y-1/2 bg-[#08080a] px-1 hidden peer-focus:block peer-valid:block transition-all">Message</label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-white text-black font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-white transition-all duration-300 mt-2 text-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Map Embed & Hours -->
+                    <div class="reveal-up delay-200 flex flex-col gap-6">
+                        <!-- Opening Hours Card -->
+                        <div class="glass-panel p-8 rounded-3xl flex items-center gap-6 group hover:border-amber-500/30 transition-all">
+                            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="ph ph-clock text-3xl text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Opening Hours</h3>
+                                <p class="text-gray-400 font-medium">Monday &ndash; Sunday</p>
+                                <p class="text-amber-400 font-bold text-lg">9:00 AM &ndash; 10:00 PM</p>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Google Map Embed -->
+                        <div class="h-full min-h-[450px] rounded-3xl overflow-hidden glass-panel border border-white/10 p-2 relative group shadow-2xl">
+                            <!-- Overlay to prevent accidental scrolling inside map on mobile -->
+                            <div class="absolute inset-2 z-10 bg-transparent flex items-center justify-center group-hover:hidden pointer-events-auto transition-all" style="touch-action: none;">
+                                <span class="bg-black/70 backdrop-blur-md text-white text-sm font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">Click to interact</span>
+                            </div>
+                            
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28308.204561081686!2d88.59599551980838!3d27.3314051052675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a56a5805eafb%3A0x73d6132c51078440!2sGangtok%2C%20Sikkim!5e0!3m2!1sen!2sin!4v1698240000000!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="100%" 
+                                class="rounded-[1.5rem] border-0 filter invert-[90%] hue-rotate-[180deg] brightness-[85%] contrast-[85%] transition-all duration-700 group-hover:filter-none" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Interactive Map showing Bean & Brew Cafe location in Gangtok">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-white/10 bg-[#030304] pt-20 pb-10 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 reveal-up">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="flex items-center gap-2 mb-6 group inline-flex" aria-label="Home">
+                        <i class="ph ph-coffee text-3xl text-amber-500 group-hover:rotate-12 transition-transform duration-300"></i>
+                        <span class="font-bold tracking-wide text-2xl text-white">Bean & Brew</span>
+                    </a>
+                    <p class="text-gray-400 text-base max-w-sm leading-relaxed mb-8">
+                        Elevating your coffee experience. Premium artisanal brews and fresh pastries in a fully immersive environment in Gangtok, Sikkim.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center hover:bg-amber-500 hover:border-amber-500 hover:text-black transition-all duration-300 text-white" aria-label="Instagram">
+                            <i class="ph ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center hover:bg-amber-500 hover:border-amber-500 hover:text-black transition-all duration-300 text-white" aria-label="Facebook">
+                            <i class="ph ph-facebook-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold mb-6 text-white text-lg tracking-wide uppercase text-sm">Quick Links</h4>
+                    <ul class="space-y-4 text-base text-gray-400 font-medium">
+                        <li><a href="#about" class="hover:text-amber-400 hover:translate-x-1 transition-all inline-block">About Us</a></li>
+                        <li><a href="#menu" class="hover:text-amber-400 hover:translate-x-1 transition-all inline-block">Our Menu</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 hover:translate-x-1 transition-all inline-block">Services</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400 hover:translate-x-1 transition-all inline-block">Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="font-bold mb-6 text-white text-lg tracking-wide uppercase text-sm">Contact</h4>
+                    <ul class="space-y-4 text-base text-gray-400 font-medium">
+                        <li class="flex items-start gap-3">
+                            <i class="ph ph-map-pin text-amber-500 mt-1 shrink-0"></i>
+                            <span>MG Marg Area, Gangtok<br/>Sikkim, 737101</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-phone text-amber-500 shrink-0"></i>
+                            <a href="tel:+918101314114" class="hover:text-amber-400 transition-colors">+91 8101314114</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-envelope-simple text-amber-500 shrink-0"></i>
+                            <a href="mailto:workhomemega@gmail.com" class="hover:text-amber-400 transition-colors truncate max-w-[200px]">workhomemega@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm font-medium">
+                    &copy; 2026 Bean & Brew Café. All rights reserved.
+                </p>
+                <div class="text-gray-500 text-sm font-medium flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC SECTION                   -->
+    <!-- ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Scroll Reveal Intersection Observer (Smooth Animations)
+            const revealElements = document.querySelectorAll('.reveal-up');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Stop observing once revealed for better performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            // 2. Mobile Menu Toggle Logic
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMenuOpen = false;
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                if(isMenuOpen){
+                    // Open Menu with solid background
+                    mobileMenu.classList.remove('menu-closed');
+                    mobileMenu.classList.add('menu-open');
+                    menuIcon.classList.remove('ph-list');
+                    menuIcon.classList.add('ph-x');
+                    // Prevent background scrolling on mobile
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close Menu
+                    mobileMenu.classList.remove('menu-open');
+                    mobileMenu.classList.add('menu-closed');
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            // Close mobile menu smoothly when clicking a link
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(isMenuOpen) toggleMenu();
+                });
+            });
+
+            // 3. Form Submission Handling (Clean UI Feedback)
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            if(contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Show success message
+                    formMessage.classList.remove('hidden', 'bg-red-500/10', 'text-red-400');
+                    formMessage.classList.add('block', 'bg-green-500/10', 'text-green-400', 'border', 'border-green-500/20', 'animate-slide-down');
+                    formMessage.textContent = 'Message sent successfully! We will get back to you soon.';
+                    
+                    // Reset form
+                    contactForm.reset();
+
+                    // Hide message gracefully after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.opacity = '0';
+                        setTimeout(() => {
+                            formMessage.classList.add('hidden');
+                            formMessage.classList.remove('block', 'animate-slide-down');
+                            formMessage.style.opacity = '1';
+                        }, 300); // Wait for fade out
+                    }, 5000);
+                });
+            }
+
+            // 4. Map overlay interaction for seamless scrolling vs interacting
+            const mapOverlay = document.querySelector('.group .absolute.inset-2');
+            if(mapOverlay) {
+                mapOverlay.addEventListener('click', function() {
+                    this.style.pointerEvents = 'none';
+                    this.style.opacity = '0';
+                });
+                
+                // Bring overlay back when mouse leaves the map container
+                const mapContainer = mapOverlay.parentElement;
+                mapContainer.addEventListener('mouseleave', function() {
+                    mapOverlay.style.pointerEvents = 'auto';
+                    mapOverlay.style.opacity = '1';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
